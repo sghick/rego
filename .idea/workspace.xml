@@ -1,25 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="62b82fdd-98fa-4129-b65c-953d53317682" name="Default Changelist" comment="" />
+    <list default="true" id="62b82fdd-98fa-4129-b65c-953d53317682" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/base_core/base_core.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/application.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/basic_config.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cache/cache_exception.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cache/disk_cache.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cache/simple_cache.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/log/logger.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/exception.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/cookie/cookie_jar.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/cookie/cookie_manager.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/cookie/default_cookie_jar.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/cookie/persist_cookie_jar.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/cookie/serializable_cookie.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/http/http_exception.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/http/http_helper.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/http/http_time.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/repo/repo.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/rego.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/navigator_observer.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/navigators.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/page_jump.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/gesture_utils.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/screen_utils.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/string_utils.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/validator.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/anim_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/base.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/borders.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/buttons.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/container_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/dialogs.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/form_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/text_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rego.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rego.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1pW361q2pXO7Fiaq3BHh58no2yq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -34,25 +93,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="356" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621505502881">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="444" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645668922945">
+      <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="356" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1621505502881" />
-    <state x="473" y="125" key="SettingsEditor" timestamp="1621506562671">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="444" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1645668922945" />
+    <state x="489" y="124" key="SettingsEditor" timestamp="1645668912750">
+      <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="473" y="125" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1621506562671" />
-    <state x="870" y="319" key="com.intellij.ide.util.TipDialog" timestamp="1621506495126">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="870" y="319" key="com.intellij.ide.util.TipDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1621506495126" />
-    <state x="544" y="307" width="852" height="486" key="find.popup" timestamp="1621506686413">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="544" y="307" width="852" height="486" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1621506686413" />
-    <state x="915" y="225" width="670" height="676" key="search.everywhere.popup" timestamp="1621506670947">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="915" y="225" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1621506670947" />
+    <state x="489" y="124" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1645668912750" />
   </component>
 </project>

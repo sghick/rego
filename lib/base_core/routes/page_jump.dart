@@ -1,5 +1,5 @@
-import 'package:wellcomeback/base_core/log/logger.dart';
-import 'package:wellcomeback/base_core/routes/navigators.dart';
+import 'package:rego/base_core/log/logger.dart';
+import 'package:rego/base_core/routes/navigators.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 typedef CheckingCallback = void Function();

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:built_collection/built_collection.dart';
-import 'package:wellcomeback/base_core/log/logger.dart';
+import 'package:rego/base_core/log/logger.dart';
 import 'package:flutter/widgets.dart';
 
 NavigationHistoryObserver navigatorObserver = NavigationHistoryObserver();

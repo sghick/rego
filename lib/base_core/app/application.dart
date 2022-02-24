@@ -1,4 +1,4 @@
-import 'package:wellcomeback/base_core/log/logger.dart';
+import 'package:rego/base_core/log/logger.dart';
 import 'package:flutter/material.dart';
 
 abstract class Application {

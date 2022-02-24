@@ -4,65 +4,41 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62b82fdd-98fa-4129-b65c-953d53317682" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/base_core/base_core.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+    <list default="true" id="ab51e1ad-a0e0-4a13-becb-1fd6ebe2771a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/rego_android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tinswin.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/application.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/basic_config.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cache/cache_exception.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cache/disk_cache.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cache/simple_cache.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/log/logger.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/exception.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/cookie/cookie_jar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/cookie/cookie_manager.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/cookie/default_cookie_jar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/cookie/persist_cookie_jar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/cookie/serializable_cookie.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/http/http_exception.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/http/http_helper.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/http/http_time.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/net/repo/repo.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/rego.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/navigator_observer.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/navigators.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/page_jump.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/gesture_utils.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/screen_utils.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/string_utils.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/validator.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/anim_widgets.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/base.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/borders.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/buttons.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/container_widgets.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/dialogs.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/form_widgets.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/text_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/base_core/app/application.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/app/application.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/base_core/routes/navigator_observer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/routes/navigator_observer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/base_core/routes/page_jump.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/routes/page_jump.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/base_core/utils/screen_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/utils/screen_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/base_core/utils/validator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/utils/validator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/base_core/widgets/base_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/widgets/base_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rego.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rego.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/rego_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Dart File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1pW361q2pXO7Fiaq3BHh58no2yq" />
+  <component name="ProjectId" id="25XPtMbhmluKbDHnfyIeWpaNOuD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -71,35 +47,49 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="62b82fdd-98fa-4129-b65c-953d53317682" name="Default Changelist" comment="" />
-      <created>1615284839511</created>
+      <changelist id="ab51e1ad-a0e0-4a13-becb-1fd6ebe2771a" name="Default Changelist" comment="" />
+      <created>1645670674769</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615284839511</updated>
+      <updated>1645670674769</updated>
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="444" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645668922945">
+    <state x="317" y="146" key="SettingsEditor" timestamp="1645670991510">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="444" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1645668922945" />
-    <state x="489" y="124" key="SettingsEditor" timestamp="1645668912750">
+    <state x="317" y="146" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1645670991510" />
+    <state x="507" y="265" width="602" height="490" key="find.popup" timestamp="1645671089249">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="489" y="124" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1645668912750" />
+    <state x="507" y="265" width="602" height="490" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1645671089249" />
   </component>
 </project>

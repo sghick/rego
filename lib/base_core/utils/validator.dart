@@ -1,4 +1,4 @@
-import 'package:wellcomeback/base_core/utils/string_utils.dart';
+import 'package:rego/base_core/utils/string_utils.dart';
 
 final RegExp emailReg =
     RegExp(r'^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$');

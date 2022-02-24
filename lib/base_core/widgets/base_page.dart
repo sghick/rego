@@ -1,4 +1,4 @@
-import 'package:wellcomeback/base_core/widgets/text_widgets.dart';
+import 'package:rego/base_core/widgets/text_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

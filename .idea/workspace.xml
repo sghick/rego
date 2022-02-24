@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab51e1ad-a0e0-4a13-becb-1fd6ebe2771a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/rego_android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tinswin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/app/application.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/app/application.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/routes/navigator_observer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/routes/navigator_observer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/routes/page_jump.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/routes/page_jump.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/utils/screen_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/utils/screen_utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/utils/validator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/utils/validator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/widgets/base_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/widgets/base_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rego.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rego.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/rego_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

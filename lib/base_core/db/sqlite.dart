@@ -42,32 +42,39 @@ abstract class CBSqlite {
 }
 
 class CBDBType {
-  static const String TEXT = 'TEXT';
-  static const String BLOB = 'BLOB';
-  static const String DATE = 'DATE';
-  static const String REAL = 'REAL';
-  static const String INTEGER = 'INTEGER';
-  static const String FLOAT = 'FLOAT';
-  static const String DOUBLE = 'DOUBLE';
-  static const String BOOLEAN = 'BOOLEAN';
-  static const String Smallint = 'Smallint';
-  static const String Currency = 'Currency';
-  static const String Varchar = 'Varchar';
-  static const String Binary = 'Binary';
-  static const String Time = 'Time';
-  static const String Timestamp = 'Timestamp';
+  static const String text = 'TEXT';
+  static const String blob = 'BLOB';
+  static const String date = 'DATE';
+  static const String real = 'REAL';
+  static const String integer = 'INTEGER';
+  static const String float = 'FLOAT';
+  static const String double = 'DOUBLE';
+  static const String boolean = 'BOOLEAN';
+  static const String smallint = 'Smallint';
+  static const String currency = 'Currency';
+  static const String varchar = 'Varchar';
+  static const String binary = 'Binary';
+  static const String time = 'Time';
+  static const String timestamp = 'Timestamp';
 }
 
 enum CBType {
-  VALUE, // 数值
-  JSON, // JSON
+  value, // 数值
+  json, // JSON
 }
 
 class CBDBMapper {
   final String tableName;
   final List<CBDBColumn> columns;
+  final Function? fromDBValue;
+  final Function? toDBValue;
 
-  CBDBMapper(this.tableName, this.columns);
+  CBDBMapper(
+    this.tableName,
+    this.columns, {
+    this.fromDBValue,
+    this.toDBValue,
+  });
 
   String sqlForDropTable() {
     return "DROP TABLE IF EXISTS '$tableName'";
@@ -76,14 +83,14 @@ class CBDBMapper {
   String sqlForCreateTable() {
     List<String> columnItems = [];
     List<String> keyItems = [];
-    columns.forEach((e) {
+    for (var e in columns) {
       if (!e.isPrimaryKey) {
         columnItems.add("'${e.name}' ${e.dbType.toString()}");
       } else {
         columnItems.add("'${e.name}' ${e.dbType.toString()} NOT NULL");
         keyItems.add("'${e.name}'");
       }
-    });
+    }
     String sql;
     if (columnItems.isNotEmpty) {
       if (keyItems.isEmpty) {
@@ -105,10 +112,10 @@ class CBDBMapper {
         : "INSERT";
     List<String> properties = [];
     List<String> values = [];
-    columns.forEach((e) {
+    for (var e in columns) {
       properties.add("'${e.name}'");
       values.add(":${e.name}");
-    });
+    }
     String sql = '';
     if (properties.isNotEmpty && values.isNotEmpty) {
       sql =
@@ -185,5 +192,17 @@ class CBDBColumn {
   // 是否为主键
   final bool isPrimaryKey;
 
-  CBDBColumn(this.dbType, this.name, {this.isPrimaryKey = false});
+  // 指定转换器
+  final Function? fromDBValue;
+
+  // 指定转换器
+  final Function? toDBValue;
+
+  CBDBColumn(
+    this.dbType,
+    this.name, {
+    this.isPrimaryKey = false,
+    this.fromDBValue,
+    this.toDBValue,
+  });
 }

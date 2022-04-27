@@ -1,4 +1,6 @@
 export 'package:sqflite/sqflite.dart';
+export 'package:rego/base_core/db/sql_creator.dart';
+export 'package:rego/base_core/db/sqlite_models.dart';
 
 import 'package:rego/base_core/db/sql_creator.dart';
 import 'package:rego/base_core/db/sqlite_models.dart';

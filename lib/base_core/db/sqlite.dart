@@ -68,7 +68,7 @@ class CBDBMapper {
     return sqlCreator.sqlForTableExist(tableName);
   }
 
-  String sqlForGetColumns(String tableName) {
+  String sqlForGetColumns() {
     return sqlCreator.sqlForGetColumns(tableName);
   }
 

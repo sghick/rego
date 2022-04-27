@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ab51e1ad-a0e0-4a13-becb-1fd6ebe2771a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/rego_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/rego_android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/widgets/text_widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/widgets/text_widgets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/base_core/db/sqlite.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/db/sqlite.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rego.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rego.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

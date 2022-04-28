@@ -1,6 +1,10 @@
 import 'package:rego/base_core/db/sqlite_models.dart';
 
 class SqlCreator {
+  String sqlForSelectTables() {
+    return "SELECT name FROM sqlite_master WHERE type ='table'";
+  }
+
   String sqlForTableExist(String tableName) {
     return "SELECT count(*) AS 'count' FROM sqlite_master WHERE type='table' and name='$tableName'";
   }
@@ -11,6 +15,14 @@ class SqlCreator {
 
   String sqlForDropTable(String tableName) {
     return "DROP TABLE IF EXISTS '$tableName'";
+  }
+
+  String sqlForDeleteData(String tableName) {
+    return "DELETE FROM '$tableName'";
+  }
+
+  String sqlForRename(String tableName, String toName) {
+    return "ALTER TABLE '$tableName' RENAME TO '$toName'";
   }
 
   String sqlForCreateTable(String tableName, List<CBDBColumn> columns) {
@@ -60,6 +72,12 @@ class SqlCreator {
           "$head INTO '$tableName' (${properties.join(',')}) VALUES(${values.join(',')})";
     }
     return sql;
+  }
+
+  String sqlForCopyInsert(
+      String tableName, List<CBDBColumn> columns, String toTableName) {
+    String fc = columns.map((e) => e.name).toList().join(',');
+    return "INSERT INTO '$toTableName' ($fc) SELECT $fc FROM '$tableName'";
   }
 
   String sqlForDelete(String tableName, {String? where}) {

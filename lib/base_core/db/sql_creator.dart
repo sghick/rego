@@ -17,10 +17,10 @@ class SqlCreator {
     List<String> columnItems = [];
     List<String> keyItems = [];
     for (var e in columns) {
-      if (!e.isPrimaryKey) {
-        columnItems.add("'${e.name}' ${e.dbType.toString()}");
+      if (!e.pk) {
+        columnItems.add("'${e.name}' ${e.type.toString()}");
       } else {
-        columnItems.add("'${e.name}' ${e.dbType.toString()} NOT NULL");
+        columnItems.add("'${e.name}' ${e.type.toString()} NOT NULL");
         keyItems.add("'${e.name}'");
       }
     }

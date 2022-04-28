@@ -22,13 +22,13 @@ enum CBType {
 
 class CBDBColumn {
   // 字段类型 CBDBType
-  final String dbType;
+  final String type;
 
   // 字段名
   final String name;
 
   // 是否为主键
-  final bool isPrimaryKey;
+  final bool pk;
 
   // 指定转换器
   final Function? fromDBValue;
@@ -37,9 +37,9 @@ class CBDBColumn {
   final Function? toDBValue;
 
   CBDBColumn(
-    this.dbType,
+    this.type,
     this.name, {
-    this.isPrimaryKey = false,
+    this.pk = false,
     this.fromDBValue,
     this.toDBValue,
   });

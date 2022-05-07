@@ -48,7 +48,7 @@ extension TimeOfDayExt on TimeOfDay {
 }
 
 extension DateTimeSeconds on int {
-  String secondsToDateString([String? pattern, String? locale]) =>
+  String formatDateString([String? pattern, String? locale]) =>
       DateFormat(pattern, locale).format(secondsToDate);
 
   DateTime get secondsToDate =>

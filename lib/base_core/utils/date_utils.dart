@@ -1,5 +1,6 @@
 // seconds
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 int daysFrom(int? fromTime, int? endTime) {
   int misOfADay = 24 * 60 * 60;
@@ -24,10 +25,10 @@ extension DateTimeExt on DateTime {
 
   TimeOfDay get timeOfDay => TimeOfDay(hour: hour, minute: minute);
 
-  int get secondsOfDay {
-    int seconds = 60 * 60 * hour + 60 * minute + second;
-    return seconds;
-  }
+  int get secondsOfDay => 60 * 60 * hour + 60 * minute + second;
+
+  String formatString([String? pattern, String? locale]) =>
+      DateFormat(pattern, locale).format(this);
 
   DateTime replaceTimeOfDay(TimeOfDay timeOfDay) {
     int interval = secondsSinceEpoch;
@@ -36,13 +37,25 @@ extension DateTimeExt on DateTime {
     return DateTime.fromMillisecondsSinceEpoch(1000 * interval);
   }
 
-  static DateTime fromSeconds(int? seconds) {
-    return DateTime.fromMillisecondsSinceEpoch(1000 * (seconds ?? 0));
-  }
+  static DateTime fromSeconds(int? seconds) =>
+      DateTime.fromMillisecondsSinceEpoch(1000 * (seconds ?? 0));
 }
 
 extension TimeOfDayExt on TimeOfDay {
   Duration get duration => Duration(hours: hour, minutes: minute);
 
   int get timeOfSeconds => 60 * 60 * hour + 60 * minute;
+}
+
+extension DateTimeSeconds on int {
+  String secondsToDateString([String? pattern, String? locale]) =>
+      DateFormat(pattern, locale).format(secondsToDate);
+
+  DateTime get secondsToDate =>
+      DateTime.fromMillisecondsSinceEpoch(1000 * this);
+}
+
+extension DateTimeString on String {
+  DateTime formatDate([String? pattern, String? locale]) =>
+      DateFormat(pattern, locale).parse(this);
 }

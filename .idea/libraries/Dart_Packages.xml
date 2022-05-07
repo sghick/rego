@@ -163,13 +163,6 @@
             </list>
           </value>
         </entry>
-        <entry key="rego">
-          <value>
-            <list>
-              <option value="$PROJECT_DIR$/../lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="sky_engine">
           <value>
             <list>
@@ -352,7 +345,6 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_web-2.0.7/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_windows-3.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.0/lib" />
-      <root url="file://$PROJECT_DIR$/../lib" />
       <root url="file://$USER_HOME$/flutters/flutterStable/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/flutters/flutterStable/flutter/packages/flutter/lib" />
       <root url="file://$USER_HOME$/flutters/flutterStable/flutter/packages/flutter_test/lib" />

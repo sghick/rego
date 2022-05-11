@@ -49,7 +49,7 @@ Future<T?> goPage<T extends Object>(
 
   if (mode == RouteMode.CLEAR_ALL) {
     _clearRoutes(nav!, null);
-    return nav.pushNamed<T>(target, arguments: arguments);
+    return nav.pushNamed(target, arguments: arguments);
   }
 
   var oldRoute = navigatorObserver.searchHistory(target);
@@ -73,7 +73,7 @@ Future<T?> goPage<T extends Object>(
     return Future.value();
   }
 
-  return navigatorState(context)!.pushNamed<T>(target, arguments: arguments);
+  return navigatorState(context)!.pushNamed(target, arguments: arguments);
 }
 
 void _clearRoutes(NavigatorState nav, Route? endRoute) {

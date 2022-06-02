@@ -33,16 +33,16 @@ class CBDBColumn {
   final bool pk;
 
   // 指定转换器
-  final Function fromDBValue;
+  final Function? fromDBValue;
 
   // 指定转换器
-  final Function toDBValue;
+  final Function? toDBValue;
 
-  CBDBColumn({
-    required this.type,
-    required this.name,
-    required this.fromDBValue,
-    required this.toDBValue,
+  CBDBColumn(
+    this.type,
+    this.name, {
+    this.fromDBValue,
+    this.toDBValue,
     this.pk = false,
   });
 }
@@ -50,14 +50,14 @@ class CBDBColumn {
 class CBDBMapper {
   final String tableName;
   final List<CBDBColumn> columns;
-  final Function fromDBValue;
-  final Function toDBValue;
+  final Function? fromDBValue;
+  final Function? toDBValue;
 
-  CBDBMapper({
-    required this.tableName,
-    required this.columns,
-    required this.fromDBValue,
-    required this.toDBValue,
+  CBDBMapper(
+    this.tableName,
+    this.columns, {
+    this.fromDBValue,
+    this.toDBValue,
   });
 
   SqlCreator get sqlCreator => SqlCreator();

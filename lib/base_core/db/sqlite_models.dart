@@ -33,32 +33,32 @@ class CBDBColumn {
   final bool pk;
 
   // 指定转换器
-  final Function? fromDBValue;
+  final Function fromDBValue;
 
   // 指定转换器
-  final Function? toDBValue;
+  final Function toDBValue;
 
-  CBDBColumn(
-    this.type,
-    this.name, {
+  CBDBColumn({
+    required this.type,
+    required this.name,
+    required this.fromDBValue,
+    required this.toDBValue,
     this.pk = false,
-    this.fromDBValue,
-    this.toDBValue,
   });
 }
 
 class CBDBMapper {
   final String tableName;
   final List<CBDBColumn> columns;
-  final Function? fromDBValue;
-  final Function? toDBValue;
+  final Function fromDBValue;
+  final Function toDBValue;
 
-  CBDBMapper(
-      this.tableName,
-      this.columns, {
-        this.fromDBValue,
-        this.toDBValue,
-      });
+  CBDBMapper({
+    required this.tableName,
+    required this.columns,
+    required this.fromDBValue,
+    required this.toDBValue,
+  });
 
   SqlCreator get sqlCreator => SqlCreator();
 

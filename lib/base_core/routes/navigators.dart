@@ -49,7 +49,9 @@ Future<T?> goPage<T extends Object>(
 
   if (mode == RouteMode.CLEAR_ALL) {
     _clearRoutes(nav!, null);
-    return nav.pushNamed<T>(target, arguments: arguments);
+    return nav
+        .pushNamed<Object>(target, arguments: arguments)
+        .then((value) => value as T?);
   }
 
   var oldRoute = navigatorObserver.searchHistory(target);
@@ -61,7 +63,9 @@ Future<T?> goPage<T extends Object>(
 
   if (mode == RouteMode.CLEAR_AND_RECREATE && oldRoute != null) {
     _clearRoutes(nav!, oldRoute);
-    return nav.pushReplacementNamed(target, arguments: arguments);
+    return nav
+        .pushReplacementNamed<Object, Object>(target, arguments: arguments)
+        .then((value) => value as T?);
   }
 
   if (mode == RouteMode.CLEAR_AND_REDISPLAY && oldRoute != null) {
@@ -73,7 +77,9 @@ Future<T?> goPage<T extends Object>(
     return Future.value();
   }
 
-  return navigatorState(context)!.pushNamed<T>(target, arguments: arguments);
+  return navigatorState(context)!
+      .pushNamed<Object>(target, arguments: arguments)
+      .then((value) => value as T?);
 }
 
 void _clearRoutes(NavigatorState nav, Route? endRoute) {

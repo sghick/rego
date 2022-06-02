@@ -4,6 +4,7 @@ class SimpleText extends StatelessWidget {
   final double? height;
   final double? width;
   final Alignment? alignment;
+  final TextAlign? textAlign;
   final String? text;
   final dynamic style;
   final TextOverflow overflow;
@@ -11,7 +12,7 @@ class SimpleText extends StatelessWidget {
   final bool singleLine;
   final EdgeInsets? contentPadding;
   final EdgeInsets? margin;
-  final Color?bkgColor;
+  final Color? bkgColor;
   final Color? borderColor;
   final double borderRadius;
   final dynamic onClick;
@@ -25,6 +26,7 @@ class SimpleText extends StatelessWidget {
       this.width,
       this.style,
       this.alignment = Alignment.center,
+      this.textAlign = TextAlign.center,
       this.overflow = TextOverflow.ellipsis,
       this.maxLines,
       this.singleLine = false,
@@ -98,6 +100,7 @@ class SimpleText extends StatelessWidget {
         style: textStyle,
         overflow: overflow,
         maxLines: maxLines,
+        textAlign: textAlign,
       ),
     );
   }

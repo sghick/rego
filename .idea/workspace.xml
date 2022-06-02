@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab51e1ad-a0e0-4a13-becb-1fd6ebe2771a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/db/sqlite_models.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/db/sqlite_models.dart" afterDir="false" />
-    </list>
+    <list default="true" id="ab51e1ad-a0e0-4a13-becb-1fd6ebe2771a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

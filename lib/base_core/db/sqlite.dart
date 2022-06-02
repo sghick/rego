@@ -1,5 +1,9 @@
 export 'package:sqflite/sqflite.dart';
+export 'package:rego/base_core/db/sql_creator.dart';
+export 'package:rego/base_core/db/sqlite_models.dart';
 
+import 'package:rego/base_core/db/sqlite_alter.dart';
+import 'package:rego/base_core/db/sqlite_models.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -41,149 +45,135 @@ abstract class CBSqlite {
   }
 }
 
-class CBDBType {
-  static const String TEXT = 'TEXT';
-  static const String BLOB = 'BLOB';
-  static const String DATE = 'DATE';
-  static const String REAL = 'REAL';
-  static const String INTEGER = 'INTEGER';
-  static const String FLOAT = 'FLOAT';
-  static const String DOUBLE = 'DOUBLE';
-  static const String BOOLEAN = 'BOOLEAN';
-  static const String Smallint = 'Smallint';
-  static const String Currency = 'Currency';
-  static const String Varchar = 'Varchar';
-  static const String Binary = 'Binary';
-  static const String Time = 'Time';
-  static const String Timestamp = 'Timestamp';
-}
-
-enum CBType {
-  VALUE, // 数值
-  JSON, // JSON
-}
-
-class CBDBMapper {
-  final String tableName;
-  final List<CBDBColumn> columns;
-
-  CBDBMapper(this.tableName, this.columns);
-
-  String sqlForDropTable() {
-    return "DROP TABLE IF EXISTS '$tableName'";
-  }
-
-  String sqlForCreateTable() {
-    List<String> columnItems = [];
-    List<String> keyItems = [];
-    columns.forEach((e) {
-      if (!e.isPrimaryKey) {
-        columnItems.add("'${e.name}' ${e.dbType.toString()}");
-      } else {
-        columnItems.add("'${e.name}' ${e.dbType.toString()} NOT NULL");
-        keyItems.add("'${e.name}'");
-      }
+extension AlterExt on CBSqlite {
+  Future<Database> doOptions(CBDBMapper dbMapper) {
+    return database.then((db) {
+      return alterCheck(db, dbMapper).then((_) => db);
     });
-    String sql;
-    if (columnItems.isNotEmpty) {
-      if (keyItems.isEmpty) {
-        sql =
-            "CREATE TABLE IF NOT EXISTS '$tableName' (${columnItems.join(',')})";
-      } else {
-        sql =
-            "CREATE TABLE IF NOT EXISTS '$tableName' (${columnItems.join(',')}, PRIMARY KEY (${keyItems.join(',')}))";
-      }
-    } else {
-      sql = "CREATE TABLE IF NOT EXISTS '$tableName'";
-    }
-    return sql;
   }
 
-  String sqlForInsert({bool replace = true, bool ignore = false}) {
-    String head = replace
-        ? (ignore ? "INSERT OR IGNORE" : "INSERT OR REPLACE")
-        : "INSERT";
-    List<String> properties = [];
-    List<String> values = [];
-    columns.forEach((e) {
-      properties.add("'${e.name}'");
-      values.add(":${e.name}");
+  Map<String, Object?> toDBValue(CBDBMapper dbMapper, Object obj) {
+    return (dbMapper.toDBValue != null)
+        ? dbMapper.toDBValue!(obj)
+        : (throw Exception('请指定数据序列化方法:toDBValue'));
+  }
+
+  List<T> fromDBValue<T extends Object>(
+      CBDBMapper dbMapper, List<Map<String, Object?>> maps) {
+    return (dbMapper.fromDBValue != null)
+        ? maps.map((e) => dbMapper.fromDBValue!(e) as T).toList()
+        : (throw Exception('请指定数据反序列化方法:fromDBValue'));
+  }
+
+  Future<int> insert(
+    CBDBMapper dbMapper,
+    dynamic obj, {
+    String? nullColumnHack,
+    ConflictAlgorithm? conflictAlgorithm = ConflictAlgorithm.replace,
+  }) {
+    return doOptions(dbMapper).then((db) {
+      var dbValue = toDBValue(dbMapper, obj);
+      return db.insert(
+        dbMapper.tableName,
+        dbValue,
+        nullColumnHack: nullColumnHack,
+        conflictAlgorithm: conflictAlgorithm,
+      );
     });
-    String sql = '';
-    if (properties.isNotEmpty && values.isNotEmpty) {
-      sql =
-          "$head INTO '$tableName' (${properties.join(',')}) VALUES(${values.join(',')})";
-    }
-    return sql;
   }
 
-  String sqlForDelete({String? where}) {
-    String sql;
-    if ((where != null) && where.isNotEmpty) {
-      sql = "DELETE FROM '$tableName' ${_applyTb(where)}";
-    } else {
-      sql = "DELETE FROM '$tableName'";
-    }
-    return sql;
+  Future<int> delete(
+    CBDBMapper dbMapper, {
+    String? where,
+    List<Object?>? whereArgs,
+  }) {
+    return doOptions(dbMapper).then((db) {
+      return db.delete(
+        dbMapper.tableName,
+        where: where,
+        whereArgs: whereArgs,
+      );
+    });
   }
 
-  String sqlForUpdate({String where = ''}) {
-    bool containsSet = where.toUpperCase().contains('SET');
-    String sql;
-    if (containsSet) {
-      sql = "UPDATE '$tableName' ${_applyTb(where)}";
-    } else {
-      sql = _sqlFroUpdateWhere(_applyTb(where));
-    }
-    return sql;
+  Future<int> update(
+    CBDBMapper dbMapper,
+    Object obj, {
+    String? where,
+    List<Object?>? whereArgs,
+    ConflictAlgorithm? conflictAlgorithm,
+  }) {
+    return doOptions(dbMapper).then((db) {
+      var dbValue = toDBValue(dbMapper, obj);
+      return db.update(
+        dbMapper.tableName,
+        dbValue,
+        where: where,
+        whereArgs: whereArgs,
+        conflictAlgorithm: conflictAlgorithm,
+      );
+    });
   }
 
-  String _sqlFroUpdateWhere(String where) {
-    String set =
-        columns.map((e) => "'${e.name}'=:${e.name}").toList().join(',');
-    String sql;
-    if (where.isNotEmpty) {
-      sql = "UPDATE '$tableName' set $set $where";
-    } else {
-      sql = "UPDATE '$tableName' set $set";
-    }
-    return sql;
+  Future<List<T>?> select<T extends Object>(
+    CBDBMapper dbMapper, {
+    bool? distinct,
+    List<String>? columns,
+    String? where,
+    List<Object?>? whereArgs,
+    String? groupBy,
+    String? having,
+    String? orderBy,
+    int? limit,
+    int? offset,
+  }) {
+    return doOptions(dbMapper).then((db) {
+      return db
+          .query(
+        dbMapper.tableName,
+        distinct: distinct,
+        columns: columns,
+        where: where,
+        whereArgs: whereArgs,
+        groupBy: groupBy,
+        having: having,
+        orderBy: orderBy,
+        limit: limit,
+        offset: offset,
+      )
+          .then((maps) {
+        if (maps.isEmpty) {
+          return Future.value();
+        }
+        List<T> list = fromDBValue(dbMapper, maps);
+        return Future.value(list);
+      });
+    });
   }
 
-  String sqlForSelect(
-      {String? select = '*',
-      String? where,
-      int? limitStart,
-      int? limitLength}) {
-    String sql;
-    if ((where != null) && where.isNotEmpty) {
-      sql = "SELECT $select FROM '$tableName' $where";
-    } else {
-      sql = "SELECT $select FROM '$tableName'";
-    }
-    if ((limitStart != null) && (limitLength != null)) {
-      sql = "$sql LIMIT $limitStart,$limitLength";
-    }
-    return sql;
+  Future<T?> selectFirst<T extends Object>(
+    CBDBMapper dbMapper, {
+    bool? distinct,
+    List<String>? columns,
+    String? where,
+    List<Object?>? whereArgs,
+    String? groupBy,
+    String? having,
+    String? orderBy,
+    int? limit,
+    int? offset,
+  }) {
+    return select<T>(
+      dbMapper,
+      distinct: distinct,
+      columns: columns,
+      where: where,
+      whereArgs: whereArgs,
+      groupBy: groupBy,
+      having: having,
+      orderBy: orderBy,
+      limit: limit,
+      offset: offset,
+    ).then((value) => value?.first);
   }
-
-  String _applyTb(String sql) {
-    if (sql.isEmpty || tableName.isEmpty) {
-      return sql;
-    }
-    return sql.replaceAll(":tb", "'$tableName'");
-  }
-}
-
-class CBDBColumn {
-  // 字段类型 CBDBType
-  final String dbType;
-
-  // 字段名
-  final String name;
-
-  // 是否为主键
-  final bool isPrimaryKey;
-
-  CBDBColumn(this.dbType, this.name, {this.isPrimaryKey = false});
 }

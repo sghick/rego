@@ -14,13 +14,15 @@ class SimpleText extends StatelessWidget {
   final EdgeInsets? margin;
   final Color? bkgColor;
   final Color? borderColor;
-  final double borderRadius;
+
+  // 可以是数值,可以是BorderRadius对象,数值表示BorderRadius.circular(radius)
+  final dynamic borderRadius;
   final dynamic onClick;
   final double borderWidth;
   final double? maxWidth;
   final double? maxHeight;
 
-  SimpleText(this.text,
+  const SimpleText(this.text,
       {Key? key,
       this.height,
       this.width,
@@ -71,11 +73,14 @@ class SimpleText extends StatelessWidget {
     BoxDecoration? decoration;
     if (bkgColor != null || borderColor != null) {
       decoration = BoxDecoration(
-          color: bkgColor,
-          border: borderColor == null
-              ? null
-              : Border.all(color: borderColor!, width: borderWidth),
-          borderRadius: BorderRadius.circular(borderRadius));
+        color: bkgColor,
+        border: borderColor == null
+            ? null
+            : Border.all(color: borderColor!, width: borderWidth),
+        borderRadius: (borderRadius is BorderRadius)
+            ? borderRadius
+            : BorderRadius.circular(borderRadius.toDouble()),
+      );
     }
 
     BoxConstraints? constraints;
@@ -114,9 +119,9 @@ class LinkText extends StatefulWidget {
   final dynamic style;
   final dynamic pressedStyle;
   final double pressedPadding;
-  final linkAction;
+  final VoidCallback? linkAction;
 
-  LinkText(
+  const LinkText(
     this.text, {
     Key? key,
     this.height,

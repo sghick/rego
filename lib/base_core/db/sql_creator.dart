@@ -57,9 +57,13 @@ class SqlCreator {
     bool replace = true,
     bool ignore = false,
   }) {
-    String head = replace
-        ? (ignore ? "INSERT OR IGNORE" : "INSERT OR REPLACE")
-        : "INSERT";
+    String head = "INSERT";
+    if (replace) {
+      head = "INSERT OR REPLACE";
+    }
+    if (ignore) {
+      head = "INSERT OR IGNORE";
+    }
     List<String> properties = [];
     List<String> values = [];
     for (var e in columns) {

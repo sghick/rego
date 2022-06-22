@@ -2,7 +2,7 @@ class SqlEngine {
   String fillSql(String sql, Map<String, Object?> values) {
     String _sql = sql;
     values.forEach((key, value) {
-      _sql.replaceAll(':$key', "'$value'");
+      _sql = _sql.replaceAll(':$key', "'$value'");
     });
     return _sql;
   }

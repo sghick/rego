@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab51e1ad-a0e0-4a13-becb-1fd6ebe2771a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/base_core/db/sql_engine.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/base_core/db/sql_creator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/db/sql_creator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/base_core/db/sqlite.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/base_core/db/sqlite.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -94,11 +94,11 @@ extension AlterExt on CBSqlite {
 
   Future<int> insertList(
     CBDBMapper dbMapper,
-    List obj, {
+    List list, {
     ConflictAlgorithm? conflictAlgorithm = ConflictAlgorithm.replace,
   }) {
     return doOptions(dbMapper).then((db) {
-      List values = obj.map((e) => toDBValue(dbMapper, e)).toList();
+      List values = list.map((e) => toDBValue(dbMapper, e)).toList();
       bool ignore = (conflictAlgorithm == ConflictAlgorithm.ignore);
       bool replace = (conflictAlgorithm == ConflictAlgorithm.replace);
       String sql = SqlCreator().sqlForInsert(

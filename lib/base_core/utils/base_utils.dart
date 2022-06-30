@@ -7,5 +7,6 @@ export 'package:rego/base_core/utils/number_utils.dart';
 export 'package:rego/base_core/utils/screen_utils.dart';
 export 'package:rego/base_core/utils/string_utils.dart';
 export 'package:rego/base_core/utils/format_utils.dart';
+export 'package:rego/base_core/utils/math_util.dart';
 
 class BaseUtils {}

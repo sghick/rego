@@ -101,7 +101,7 @@ class SimpleText extends StatelessWidget {
       width: width,
       alignment: alignment,
       child: Text(
-        text!,
+        text ?? '',
         style: textStyle,
         overflow: overflow,
         maxLines: maxLines,

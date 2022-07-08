@@ -75,8 +75,8 @@ List<CBDBColumn>? _needsKeepColumns(
   List<String> clm =
       dbMapper.columns.map((e) => _columnSign(e.name, e.type, e.pk)).toList();
   if (!_isEqualList(dbClm, clm)) {
-    List<CBDBColumn> keepColumns = dbMapper.columns
-        .filter((obj) => ((dbClm.contains(obj.name)) ? obj : null));
+    List<CBDBColumn> keepColumns = dbMapper.columns.filter((e) =>
+        ((dbClm.contains(_columnSign(e.name, e.type, e.pk))) ? e : null));
     return keepColumns;
   } else {
     return null;

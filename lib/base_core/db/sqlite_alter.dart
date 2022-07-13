@@ -45,11 +45,7 @@ Future<bool> _createOrAlterTable(Database db, CBDBMapper dbMapper) {
 Future<bool> _recreateOrAlterTable(Database db, CBDBMapper dbMapper) async {
   List<CBPragma> dbColumns = await _columns(db, dbMapper);
   // bool pkChanged = await _isPrimaryKeysChanged(dbColumns, dbMapper);
-  // if (pkChanged) {
-  //   return _dropTableIfExist(db, dbMapper).then((success) {
-  //     return _createTableIfNotExist(db, dbMapper);
-  //   });
-  // }
+
   List<CBDBColumn>? needsKeepColumns = _needsKeepColumns(dbColumns, dbMapper);
   if (needsKeepColumns == null || needsKeepColumns.isEmpty) {
     // 没有变化
@@ -58,15 +54,6 @@ Future<bool> _recreateOrAlterTable(Database db, CBDBMapper dbMapper) async {
     return _recreateTable(db, dbMapper, needsKeepColumns);
   }
 }
-
-// Future<bool> _isPrimaryKeysChanged(
-//     List<CBPragma> dbColumns, CBDBMapper dbMapper) {
-//   List<String> dbPks = dbColumns.filter((obj) => (obj.pk ? obj.name : null));
-//   List<String> pks =
-//       dbMapper.columns.filter((obj) => (obj.pk ? obj.name : null));
-//   bool changed = !_isEqualList(dbPks, pks);
-//   return Future.value(changed);
-// }
 
 List<CBDBColumn>? _needsKeepColumns(
     List<CBPragma> dbColumns, CBDBMapper dbMapper) {
@@ -103,13 +90,6 @@ Future<bool> _createTableIfNotExist(Database db, CBDBMapper dbMapper) {
   });
 }
 
-// Future<bool> _dropTableIfExist(Database db, CBDBMapper dbMapper) {
-//   String sql = dbMapper.sqlForDropTable();
-//   return db.execute(sql).then((maps) {
-//     return Future.value(true);
-//   });
-// }
-
 Future<List<CBPragma>> _columns(Database db, CBDBMapper dbMapper) {
   String sql = dbMapper.sqlForGetColumns();
   return db.rawQuery(sql).then((maps) {
@@ -136,6 +116,7 @@ Future<bool> _recreateTable(
   logD(dropSql);
   logD(renameSql);
   String sql = [drop, createSql, copySql, dropSql, renameSql].join(';');
+  sql = SqlCreator().sqlForTransaction(sql);
   logD(sql);
   return db.execute(sql).then((maps) {
     return Future.value(true);

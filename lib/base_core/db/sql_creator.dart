@@ -1,6 +1,20 @@
 import 'package:rego/base_core/db/sqlite_models.dart';
 
 class SqlCreator {
+  String sqlForTransaction(
+    String sql, {
+    bool foreignKeys = false,
+    bool writableSchema = false,
+  }) {
+    String rtn = '';
+    rtn += 'PRAGMA foreign_keys=${foreignKeys ? 'ON' : 'OFF'};\n';
+    rtn += ' BEGIN TRANSACTION;\n';
+    rtn += sql + '\n';
+    rtn += 'PRAGMA writable_schema=${writableSchema ? 'ON' : 'OFF'};\n';
+    rtn += 'COMMIT;\n';
+    return rtn;
+  }
+
   String sqlForSelectTables() {
     return "SELECT name FROM sqlite_master WHERE type ='table'";
   }

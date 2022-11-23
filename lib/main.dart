@@ -4,12 +4,56 @@ void main() {
   runApp(const MyApp());
 }
 
+// void test001() {
+//   SqlBuilder sql1 = SqlBuilder()
+//       .select('*')
+//       .from('table1')
+//       .where('id = 1')
+//       .groupBy('id,name')
+//       .orderBy('id,name desc');
+//   SqlBuilder sql2 = SqlBuilder()
+//       .select('*')
+//       .from('table2')
+//       .where('id = 1')
+//       .groupBy('id,name');
+//   SqlBuilder sql3 = SqlBuilder()
+//       .select('*')
+//       .from('table3')
+//       .where('id = 1')
+//       .orderBy('id,name desc');
+//   SqlBuilder sql4 = SqlBuilder()
+//       .select('*')
+//       .from('table4')
+//       .groupBy('id,name')
+//       .orderBy('id,name desc');
+//   SqlBuilder sql5 = SqlBuilder()
+//       .select('*')
+//       .from('table5')
+//       .where('id = 1');
+//   SqlBuilder sql6 = SqlBuilder()
+//       .select('*')
+//       .from('table6')
+//       .groupBy('id,name');
+//   SqlBuilder sql7 = SqlBuilder()
+//       .select('*')
+//       .from('table7')
+//       .orderBy('id,name desc');
+//   log(sql1.sqlString);
+//   log(sql2.sqlString);
+//   log(sql3.sqlString);
+//   log(sql4.sqlString);
+//   log(sql5.sqlString);
+//   log(sql6.sqlString);
+//   log(sql7.sqlString);
+// }
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // test001();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(

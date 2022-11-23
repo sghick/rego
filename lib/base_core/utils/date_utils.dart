@@ -37,6 +37,10 @@ extension DateTimeExt on DateTime {
     return DateTime.fromMillisecondsSinceEpoch(1000 * interval);
   }
 
+  DateTime trimTimeOfDay() {
+    return replaceTimeOfDay(const TimeOfDay(hour: 0, minute: 0));
+  }
+
   static DateTime fromSeconds(int? seconds) =>
       DateTime.fromMillisecondsSinceEpoch(1000 * (seconds ?? 0));
 }

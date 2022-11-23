@@ -2,6 +2,8 @@ export 'package:sqflite/sqflite.dart';
 export 'package:rego/base_core/db/sql_creator.dart';
 export 'package:rego/base_core/db/sqlite_models.dart';
 
+import 'package:rego/base_core/db/sql_creator.dart';
+import 'package:rego/base_core/db/sql_engine.dart';
 import 'package:rego/base_core/db/sqlite_alter.dart';
 import 'package:rego/base_core/db/sqlite_models.dart';
 import 'package:sqflite/sqflite.dart';
@@ -53,16 +55,24 @@ extension AlterExt on CBSqlite {
   }
 
   Map<String, Object?> toDBValue(CBDBMapper dbMapper, Object obj) {
-    return (dbMapper.toDBValue != null)
-        ? dbMapper.toDBValue!(obj)
-        : (throw Exception('请指定数据序列化方法:toDBValue'));
+    try {
+      return (dbMapper.toDBValue != null)
+          ? dbMapper.toDBValue!(obj)
+          : (throw Exception('请指定数据序列化方法:toDBValue'));
+    } catch (e) {
+      throw Exception(e);
+    }
   }
 
   List<T> fromDBValue<T extends Object>(
       CBDBMapper dbMapper, List<Map<String, Object?>> maps) {
-    return (dbMapper.fromDBValue != null)
-        ? maps.map((e) => dbMapper.fromDBValue!(e) as T).toList()
-        : (throw Exception('请指定数据反序列化方法:fromDBValue'));
+    try {
+      return (dbMapper.fromDBValue != null)
+          ? maps.map((e) => dbMapper.fromDBValue!(e) as T).toList()
+          : (throw Exception('请指定数据反序列化方法:fromDBValue'));
+    } catch (e) {
+      throw Exception(e);
+    }
   }
 
   Future<int> insert(
@@ -79,6 +89,24 @@ extension AlterExt on CBSqlite {
         nullColumnHack: nullColumnHack,
         conflictAlgorithm: conflictAlgorithm,
       );
+    });
+  }
+
+  Future<int> insertList(
+    CBDBMapper dbMapper,
+    List list, {
+    ConflictAlgorithm? conflictAlgorithm = ConflictAlgorithm.replace,
+  }) {
+    return doOptions(dbMapper).then((db) {
+      List values = list.map((e) => toDBValue(dbMapper, e)).toList();
+      bool ignore = (conflictAlgorithm == ConflictAlgorithm.ignore);
+      bool replace = (conflictAlgorithm == ConflictAlgorithm.replace);
+      String sql = SqlCreator().sqlForInsert(
+          dbMapper.tableName, dbMapper.columns,
+          replace: replace, ignore: ignore);
+      String sqlList =
+          SqlEngine().fillSqlSet(sql, values as List<Map<String, Object?>>);
+      return db.rawInsert(sqlList);
     });
   }
 

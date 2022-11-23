@@ -11,7 +11,7 @@ int daysFrom(int? fromTime, int? endTime) {
 
 // seconds
 int daysFromNow(int? fromTime) {
-  return daysFrom(fromTime, DateTime.now().millisecondsSinceEpoch ~/ 1000);
+  return daysFrom(fromTime, DateTime.now().trimTimeOfDay().secondsSinceEpoch);
 }
 
 bool isToday(int? fromTime) {

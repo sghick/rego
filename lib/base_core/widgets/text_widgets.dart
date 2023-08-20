@@ -248,6 +248,7 @@ class TextStyleBuilder {
   Color? _color;
   FontWeight? _weight;
   double? _height;
+  TextDecoration? _decoration;
 
   TextStyleBuilder size(double size) {
     this._size = size;
@@ -274,8 +275,17 @@ class TextStyleBuilder {
     return this;
   }
 
+  TextStyleBuilder decoration(TextDecoration decoration) {
+    this._decoration = decoration;
+    return this;
+  }
+
   TextStyle get build {
     return TextStyle(
-        fontSize: _size, color: _color, fontWeight: _weight, height: _height);
+        fontSize: _size,
+        color: _color,
+        fontWeight: _weight,
+        height: _height,
+        decoration: _decoration);
   }
 }
